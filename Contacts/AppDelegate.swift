@@ -10,16 +10,24 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
-    var window: UIWindow?
+    
+    var contactListDependencyInjector: ContactListDependencyInjetor?
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        let contactListViewController: ContactListViewController = ContactListViewController(nibName: nil, bundle: NSBundle.mainBundle())
+        contactListDependencyInjector = ContactListDependencyInjetor()
+        guard let contactListViewController:UIViewController = (contactListDependencyInjector?.createContactListViewController()) else {
+        
+            return false
+        }
        
-        window = UIWindow(frame:UIScreen.mainScreen().bounds)
-        window?.makeKeyAndVisible()
-        window?.rootViewController = contactListViewController
+        let window:UIWindow = UIWindow(frame:UIScreen.mainScreen().bounds)
+        guard let contactListRouting:Routing = contactListDependencyInjector?.createContactListRouting(window) else {
+        
+            return false
+        }
+        
+        contactListRouting.displayViewController(contactListViewController)
         
         return true
     }
