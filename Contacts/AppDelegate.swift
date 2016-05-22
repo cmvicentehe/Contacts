@@ -16,16 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
         contactListDependencyInjector = ContactListDependencyInjetor()
-        guard let contactListViewController:UIViewController = (contactListDependencyInjector?.createContactListViewController()) else {
-        
-            return false
-        }
-       
         let window:UIWindow = UIWindow(frame:UIScreen.mainScreen().bounds)
-        guard let contactListRouting:Routing = contactListDependencyInjector?.createContactListRouting(window) else {
         
-            return false
-        }
+        guard let contactListRouting:Routing = contactListDependencyInjector?.createContactListRouting(window) else { return false }
+        
+        let presenter:Presenter = (contactListDependencyInjector?.createContactListPresenter(contactListRouting))!
+        
+        let view:View = presenter.view
+        guard let contactListViewController:UIViewController = contactListDependencyInjector?.createContactListViewController(view) else { return false }
         
         contactListRouting.displayViewController(contactListViewController)
         

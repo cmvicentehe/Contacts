@@ -10,18 +10,60 @@ import UIKit
 
 class ContactListDependencyInjetor: NSObject {
     
-    func createContactListViewController() -> ContactListViewController {
-     
-         let contactListViewController: ContactListViewController = ContactListViewController(nibName: nil, bundle: NSBundle.mainBundle())
-        
-        return contactListViewController
-    }
-    
+    // MARK: Routing
     func createContactListRouting(window: UIWindow) -> ContactListRouting {
         
         let contactListRouting: ContactListRouting = ContactListRouting(window: window)
-        
         return contactListRouting
+    }
+    
+    // MARK: ContactListData information
+    func createContactListData() -> ContactListData {
+        
+        let contactList:Array<Contact> = Array<Contact>()
+        let contactListData:ContactListData = ContactListData(contactList: contactList)
+        return contactListData
+    }
+    
+    // MARK: Contact list presenter
+    func createContactListPresenter(routing:Routing) -> ContactListPresenter {
+        
+        let contactListTableView:ContactsTableView = createContactsTableView()
+        let contactListInteractor:ContactListInteractor = createContactListInteractor()
+        let contactListPresenter:ContactListPresenter = ContactListPresenter(view: contactListTableView, interactor: contactListInteractor, routing: routing)
+        
+        contactListTableView.presenter = contactListPresenter
+        contactListInteractor.presenter = contactListPresenter
+        
+        return contactListPresenter
+    }
+    
+    // MARK: Contact list interactor
+    func createContactListInteractor() -> ContactListInteractor {
+    
+        let repository:ContactListRepository = createContactListRepository()
+        let contactListInteractor:ContactListInteractor = ContactListInteractor(repository: repository)
+        return contactListInteractor
+    }
+    
+    // MARK: Contact list repository
+    func createContactListRepository() -> ContactListRepository {
+        
+        let repository:ContactListRepository = ContactListRepository()
+        return repository
+    }
+    
+    // MARK: Contact list views
+    func createContactsTableView() -> ContactsTableView {
+        
+        let contactsTableView:ContactsTableView = ContactsTableView()
+        return contactsTableView
+    }
+    
+    func createContactListViewController(view:View) -> ContactListViewController {
+     
+        let contactListViewController: ContactListViewController = ContactListViewController(view: view)
+        return contactListViewController
     }
     
 }

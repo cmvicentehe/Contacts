@@ -14,6 +14,7 @@ class ContactListPresenter: Presenter {
     var view: View
     var interactor: Interactor
     var routing: Routing
+    var isViewLoaded:Bool?
     
     // MARK: Instance Initialization
     init(view: View, interactor:Interactor, routing:Routing) {

@@ -19,6 +19,8 @@
 		096938E31CE8D30C00DB78EE /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938E21CE8D30C00DB78EE /* Contact.swift */; };
 		096938E51CE8D32600DB78EE /* ContactListDependencyInjector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938E41CE8D32600DB78EE /* ContactListDependencyInjector.swift */; };
 		096938E71CE8D33C00DB78EE /* ContactListRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938E61CE8D33C00DB78EE /* ContactListRepository.swift */; };
+		0969AFB21CF0FA6000E7B1C2 /* ContactsTableView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969AFB11CF0FA6000E7B1C2 /* ContactsTableView .swift */; };
+		0969AFB41CF0FC7E00E7B1C2 /* ContactListData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0969AFB31CF0FC7E00E7B1C2 /* ContactListData.swift */; };
 		099C11401CE9BB1700DE8EA8 /* ViewLifeCycle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C113F1CE9BB1700DE8EA8 /* ViewLifeCycle.swift */; };
 		099C11421CE9BB2600DE8EA8 /* View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C11411CE9BB2600DE8EA8 /* View.swift */; };
 		099C11441CE9BC1600DE8EA8 /* Interactor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C11431CE9BC1600DE8EA8 /* Interactor.swift */; };
@@ -63,6 +65,8 @@
 		096938E21CE8D30C00DB78EE /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		096938E41CE8D32600DB78EE /* ContactListDependencyInjector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListDependencyInjector.swift; sourceTree = "<group>"; };
 		096938E61CE8D33C00DB78EE /* ContactListRepository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListRepository.swift; sourceTree = "<group>"; };
+		0969AFB11CF0FA6000E7B1C2 /* ContactsTableView .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ContactsTableView .swift"; sourceTree = "<group>"; };
+		0969AFB31CF0FC7E00E7B1C2 /* ContactListData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListData.swift; sourceTree = "<group>"; };
 		099C113F1CE9BB1700DE8EA8 /* ViewLifeCycle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewLifeCycle.swift; sourceTree = "<group>"; };
 		099C11411CE9BB2600DE8EA8 /* View.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = View.swift; sourceTree = "<group>"; };
 		099C11431CE9BC1600DE8EA8 /* Interactor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Interactor.swift; sourceTree = "<group>"; };
@@ -174,6 +178,7 @@
 			isa = PBXGroup;
 			children = (
 				096938E21CE8D30C00DB78EE /* Contact.swift */,
+				0969AFB31CF0FC7E00E7B1C2 /* ContactListData.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -207,8 +212,9 @@
 		096938D91CE8882700DB78EE /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				099C113F1CE9BB1700DE8EA8 /* ViewLifeCycle.swift */,
+				0969AFB11CF0FA6000E7B1C2 /* ContactsTableView .swift */,
 				099C11411CE9BB2600DE8EA8 /* View.swift */,
+				099C113F1CE9BB1700DE8EA8 /* ViewLifeCycle.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -364,11 +370,13 @@
 			files = (
 				096938E71CE8D33C00DB78EE /* ContactListRepository.swift in Sources */,
 				099C11401CE9BB1700DE8EA8 /* ViewLifeCycle.swift in Sources */,
+				0969AFB41CF0FC7E00E7B1C2 /* ContactListData.swift in Sources */,
 				096938DC1CE888FF00DB78EE /* ContactListViewController.swift in Sources */,
 				096938E11CE8D2FE00DB78EE /* ContactListInteractor.swift in Sources */,
 				096938E31CE8D30C00DB78EE /* Contact.swift in Sources */,
 				096938E51CE8D32600DB78EE /* ContactListDependencyInjector.swift in Sources */,
 				099C11441CE9BC1600DE8EA8 /* Interactor.swift in Sources */,
+				0969AFB21CF0FA6000E7B1C2 /* ContactsTableView .swift in Sources */,
 				099C11481CE9D37D00DE8EA8 /* Repository.swift in Sources */,
 				099C114C1CE9EDB200DE8EA8 /* ContactListRouting.swift in Sources */,
 				096938DA1CE8882700DB78EE /* AppDelegate.swift in Sources */,

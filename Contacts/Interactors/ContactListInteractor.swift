@@ -10,12 +10,11 @@ import Foundation
 
 class ContactListInteractor: Interactor {
 
-    var presenter: Presenter
+    var presenter: Presenter?
     var repository: Repository
     
-    init(presenter:Presenter, repository:Repository) {
+    init(repository:Repository) {
     
-        self.presenter = presenter
         self.repository = repository
     }
     

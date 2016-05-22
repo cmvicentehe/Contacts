@@ -13,6 +13,7 @@ protocol Presenter {
     var view: View { get }
     var interactor: Interactor { get }
     var routing: Routing { get }
+    var isViewLoaded: Bool? { get set }
 
     func displayElements<Element>(elements: [Element]) -> Void
     func displayElementInformation<Element>(element:Element) -> Void
