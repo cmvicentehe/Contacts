@@ -13,23 +13,20 @@ struct Contact {
     
     var name: String
     var surname: String
-    var lastSurname:String?
-    var phone: String?
-    var email: String?
+    var phoneList: [String]?
+    var emailList: [String]?
     var image: UIImage?
     
     init(name:String,
          surname:String,
-         lastSurname:String?,
-         phone:String?,
-         email:String?,
+         phoneList:[String]?,
+         emailList:[String]?,
          image:UIImage?) {
-    
+        
         self.name = name
         self.surname = surname
-        self.lastSurname = lastSurname
-        self.phone = phone
-        self.email = email
+        self.phoneList = phoneList
+        self.emailList = emailList
         self.image = image
     }
 }

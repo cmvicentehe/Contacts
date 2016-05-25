@@ -12,6 +12,10 @@ class ContactListRepository: Repository {
     
     var elements: [Contact]?
     var selectedElement: Contact?
+    var contactManager:ContactManager?
     
+    func notifyMessage(message:String) -> Void {
+    
+    }
     
 }
