@@ -11,7 +11,6 @@
 		096938BA1CE884D800DB78EE /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938B91CE884D800DB78EE /* ContactsUITests.swift */; };
 		096938CE1CE8878700DB78EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096938C81CE8878700DB78EE /* Assets.xcassets */; };
 		096938CF1CE8878700DB78EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096938C91CE8878700DB78EE /* LaunchScreen.storyboard */; };
-		096938D11CE8878700DB78EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 096938CD1CE8878700DB78EE /* Info.plist */; };
 		096938DA1CE8882700DB78EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938D21CE8882600DB78EE /* AppDelegate.swift */; };
 		096938DC1CE888FF00DB78EE /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938DB1CE888FF00DB78EE /* ContactListViewController.swift */; };
 		096938DF1CE8D2E600DB78EE /* ContactListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938DE1CE8D2E600DB78EE /* ContactListPresenter.swift */; };
@@ -350,7 +349,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096938D11CE8878700DB78EE /* Info.plist in Resources */,
 				096938CE1CE8878700DB78EE /* Assets.xcassets in Resources */,
 				096938CF1CE8878700DB78EE /* LaunchScreen.storyboard in Resources */,
 			);

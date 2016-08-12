@@ -8,11 +8,19 @@
 
 import Foundation
 
+typealias RetrieveContactsCompletionBlock = (result: String) -> Void
+
 class ContactListRepository: Repository {
     
     var elements: [Contact]?
     var selectedElement: Contact?
     var contactManager:ContactManager?
+    
+    func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
+        
+        
+        
+    }
     
     func notifyMessage(message:String) -> Void {
     

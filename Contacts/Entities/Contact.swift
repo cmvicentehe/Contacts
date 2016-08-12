@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import UIKit
 
 struct Contact {
     
@@ -15,13 +14,13 @@ struct Contact {
     var surname: String
     var phoneList: [String]?
     var emailList: [String]?
-    var image: UIImage?
+    var image: NSData?
     
     init(name:String,
          surname:String,
          phoneList:[String]?,
          emailList:[String]?,
-         image:UIImage?) {
+         image:NSData?) {
         
         self.name = name
         self.surname = surname

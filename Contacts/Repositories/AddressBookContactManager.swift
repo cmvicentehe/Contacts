@@ -27,14 +27,14 @@ class AddressBookContactManager:ContactManager {
     }
     
     // MARK: ABAddressPermision
-    func manageAutorizationStatus() -> String? {
+    func manageAutorizationStatus(completionHandler: RetrieveContactsCompletionBlock?) -> String? {
         
         var message:String? = nil
         if let status: ABAuthorizationStatus = ABAddressBookGetAuthorizationStatus() {
             
             switch status {
                 
-            case .NotDetermined: requestAccessToContacts()
+            case .NotDetermined: requestAccessToContacts(completionHandler)
             case .Restricted, .Denied: message = "You have to activate contact privacy permission"
             case .Authorized: print("Success!")
                 
@@ -44,12 +44,13 @@ class AddressBookContactManager:ContactManager {
         return message
     }
     
-    func requestAccessToContacts() -> Void {
+    func requestAccessToContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
         
         ABAddressBookRequestAccessWithCompletion(addressBook, {[weak self] (granted: Bool, error: CFError!) in
+            
             if granted {
                 
-                self?.retrieveContacts()
+                self?.retrieveContacts(completionHandler)
                 
             } else {
                 
@@ -60,9 +61,9 @@ class AddressBookContactManager:ContactManager {
     }
     
     // MARK: Contacts management
-    func retrieveContacts() -> [Contact] {
+    func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> [Contact] {
         
-        var contacts:[Contact] = Array()
+        var contacts:[Contact] = [Contact]()
         let records:[ABRecordRef] = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue() as Array<ABRecordRef>
         
         for record:ABRecordRef in records {
@@ -84,9 +85,8 @@ class AddressBookContactManager:ContactManager {
                                                           kABPersonEmailProperty).takeRetainedValue()
         let phoneRef: ABMultiValueRef = ABRecordCopyValue(record,
                                                           kABPersonPhoneProperty).takeRetainedValue()
-        
         let imgData:NSData = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue() as NSData
-        let image:UIImage? = UIImage(data: imgData)
+        
         if firstName == nil {
             
             firstName = "NoName"
@@ -100,7 +100,11 @@ class AddressBookContactManager:ContactManager {
         let phoneList:[String]? = ABMultiValueCopyArrayOfAllValues(phoneRef).takeRetainedValue() as? [String]
         let emailList:[String]? = ABMultiValueCopyArrayOfAllValues(emailRef).takeRetainedValue() as? [String]
         
-        let contact:Contact = Contact(name: firstName!, surname: surname!, phoneList:phoneList, emailList:emailList, image:image)
+        let contact:Contact = Contact(name: firstName!,
+                                      surname: surname!,
+                                      phoneList:phoneList,
+                                      emailList:emailList,
+                                      image:imgData)
         
         return contact
     }
