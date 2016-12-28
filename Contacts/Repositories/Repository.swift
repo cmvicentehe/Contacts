@@ -12,4 +12,6 @@ protocol Repository {
     
     var elements:[Contact]? { get }
     var selectedElement: Contact? { get }
+    
+    func notifyMessage(message:String) -> Void
 }

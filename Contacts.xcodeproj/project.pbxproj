@@ -27,6 +27,9 @@
 		099C11481CE9D37D00DE8EA8 /* Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C11471CE9D37D00DE8EA8 /* Repository.swift */; };
 		099C114C1CE9EDB200DE8EA8 /* ContactListRouting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C114A1CE9EDB200DE8EA8 /* ContactListRouting.swift */; };
 		099C114D1CE9EDB200DE8EA8 /* Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 099C114B1CE9EDB200DE8EA8 /* Routing.swift */; };
+		7DF6A6CA1CF2F751006587E5 /* ContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6A6C91CF2F751006587E5 /* ContactManager.swift */; };
+		7DF6A6CC1CF2F972006587E5 /* CNContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6A6CB1CF2F972006587E5 /* CNContactManager.swift */; };
+		7DF6A6CE1CF310BE006587E5 /* AddressBookContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6A6CD1CF310BE006587E5 /* AddressBookContactManager.swift */; };
 		D41E797E1E13E0270081F592 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41E797D1E13E0270081F592 /* Contacts.storyboard */; };
 		D41E79801E13E7EB0081F592 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E797F1E13E7EB0081F592 /* Constants.swift */; };
 /* End PBXBuildFile section */
@@ -75,6 +78,9 @@
 		099C11471CE9D37D00DE8EA8 /* Repository.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repository.swift; sourceTree = "<group>"; };
 		099C114A1CE9EDB200DE8EA8 /* ContactListRouting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactListRouting.swift; sourceTree = "<group>"; };
 		099C114B1CE9EDB200DE8EA8 /* Routing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Routing.swift; sourceTree = "<group>"; };
+		7DF6A6C91CF2F751006587E5 /* ContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactManager.swift; sourceTree = "<group>"; };
+		7DF6A6CB1CF2F972006587E5 /* CNContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CNContactManager.swift; sourceTree = "<group>"; };
+		7DF6A6CD1CF310BE006587E5 /* AddressBookContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookContactManager.swift; sourceTree = "<group>"; };
 		D41E797D1E13E0270081F592 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		D41E797F1E13E7EB0081F592 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -229,6 +235,9 @@
 			children = (
 				096938E61CE8D33C00DB78EE /* ContactListRepository.swift */,
 				099C11471CE9D37D00DE8EA8 /* Repository.swift */,
+				7DF6A6C91CF2F751006587E5 /* ContactManager.swift */,
+				7DF6A6CB1CF2F972006587E5 /* CNContactManager.swift */,
+				7DF6A6CD1CF310BE006587E5 /* AddressBookContactManager.swift */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -380,6 +389,7 @@
 				D41E79801E13E7EB0081F592 /* Constants.swift in Sources */,
 				099C11401CE9BB1700DE8EA8 /* ViewLifeCycle.swift in Sources */,
 				0969AFB41CF0FC7E00E7B1C2 /* ContactListData.swift in Sources */,
+				7DF6A6CC1CF2F972006587E5 /* CNContactManager.swift in Sources */,
 				096938DC1CE888FF00DB78EE /* ContactListViewController.swift in Sources */,
 				096938E11CE8D2FE00DB78EE /* ContactListInteractor.swift in Sources */,
 				096938E31CE8D30C00DB78EE /* Contact.swift in Sources */,
@@ -388,9 +398,11 @@
 				0969AFB21CF0FA6000E7B1C2 /* ContactsTableView .swift in Sources */,
 				099C11481CE9D37D00DE8EA8 /* Repository.swift in Sources */,
 				099C114C1CE9EDB200DE8EA8 /* ContactListRouting.swift in Sources */,
+				7DF6A6CE1CF310BE006587E5 /* AddressBookContactManager.swift in Sources */,
 				096938DA1CE8882700DB78EE /* AppDelegate.swift in Sources */,
 				099C114D1CE9EDB200DE8EA8 /* Routing.swift in Sources */,
 				099C11461CE9BD5E00DE8EA8 /* Presenter.swift in Sources */,
+				7DF6A6CA1CF2F751006587E5 /* ContactManager.swift in Sources */,
 				099C11421CE9BB2600DE8EA8 /* View.swift in Sources */,
 				096938DF1CE8D2E600DB78EE /* ContactListPresenter.swift in Sources */,
 			);
@@ -535,8 +547,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Contacts/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.Contacts;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)_application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
@@ -549,8 +563,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Contacts/Resources/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.Contacts;
+				PRODUCT_MODULE_NAME = "$(PRODUCT_NAME:c99extidentifier)_application";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};

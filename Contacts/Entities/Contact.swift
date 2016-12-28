@@ -7,29 +7,13 @@
 //
 
 import Foundation
-import UIKit
 
 struct Contact {
     
     let name: String
     let surname: String
     let lastSurname:String?
-    let phone: String?
-    let email: String?
-    let image: UIImage?
-    
-    init(name:String,
-         surname:String,
-         lastSurname:String?,
-         phone:String?,
-         email:String?,
-         image:UIImage?) {
-    
-        self.name = name
-        self.surname = surname
-        self.lastSurname = lastSurname
-        self.phone = phone
-        self.email = email
-        self.image = image
-    }
+    let phoneList: [String]?
+    let emailList: [String]?
+    let image: Data?
 }
