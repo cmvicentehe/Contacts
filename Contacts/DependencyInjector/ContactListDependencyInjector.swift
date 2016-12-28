@@ -29,7 +29,7 @@ class ContactListDependencyInjetor: NSObject {
     func createContactListPresenter(_ routing:Routing) -> ContactListPresenter {
         
         let contactListTableView:ContactsTableView = createContactsTableView()
-        let contactListInteractor:ContactListInteractor = createContactListInteractor()
+        var contactListInteractor:ContactListInteractor = createContactListInteractor()
         let contactListPresenter:ContactListPresenter = ContactListPresenter(view: contactListTableView, interactor: contactListInteractor, routing: routing)
         
         contactListTableView.presenter = contactListPresenter
@@ -60,9 +60,12 @@ class ContactListDependencyInjetor: NSObject {
         return contactsTableView
     }
     
-    func createContactListViewController(_ view:View) -> ContactListViewController {
+    func createContactListViewController(_ view:View) -> ContactListViewController? {
      
-        let contactListViewController: ContactListViewController = ContactListViewController(view: view)
+        let contactsStoryBoard: UIStoryboard = UIStoryboard(name: Constants.contactsStoryboard, bundle: nil)
+        guard let contactListViewController: ContactListViewController = contactsStoryBoard.instantiateViewController(withIdentifier: Constants.contactListViewController) as? ContactListViewController else { return nil }
+        
+        contactListViewController.contactListTableView = view
         return contactListViewController
     }
     

@@ -14,12 +14,10 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     var contactListDataInformation:ContactListData?
     var presenter: Presenter?
     var view:UIView { get {
-        
         return self.tableView
         }
         
         set {
-            
             self.tableView = newValue as? UITableView
             self.tableView.dataSource = self
             self.tableView.delegate = self
@@ -30,7 +28,6 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     // MARK: View protocol methods
     
     func viewDidLoaded() {
-        
         presenter?.isViewLoaded = true
     }
     

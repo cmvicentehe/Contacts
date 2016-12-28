@@ -8,13 +8,11 @@
 
 import Foundation
 
-class ContactListInteractor: Interactor {
-
+struct ContactListInteractor: Interactor {
     var presenter: Presenter?
     var repository: Repository
     
     init(repository:Repository) {
-    
         self.repository = repository
     }
     

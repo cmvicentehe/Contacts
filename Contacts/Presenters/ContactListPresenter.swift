@@ -8,7 +8,7 @@
 
 import Foundation
 
-class ContactListPresenter: Presenter {
+struct ContactListPresenter: Presenter {
     
     // MARK: Presenter protocol properties
     var view: View

@@ -11,12 +11,12 @@ import UIKit
 
 struct Contact {
     
-    var name: String
-    var surname: String
-    var lastSurname:String?
-    var phone: String?
-    var email: String?
-    var image: UIImage?
+    let name: String
+    let surname: String
+    let lastSurname:String?
+    let phone: String?
+    let email: String?
+    let image: UIImage?
     
     init(name:String,
          surname:String,

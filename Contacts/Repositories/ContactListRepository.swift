@@ -8,10 +8,7 @@
 
 import Foundation
 
-class ContactListRepository: Repository {
-    
+struct ContactListRepository: Repository {
     var elements: [Contact]?
     var selectedElement: Contact?
-    
-    
 }

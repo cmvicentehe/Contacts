@@ -9,8 +9,6 @@
 import Foundation
 
 protocol Interactor {
-    
     var presenter: Presenter? { get set }
     var repository: Repository { get }
-    
 }

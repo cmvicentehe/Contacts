@@ -8,12 +8,6 @@
 
 import Foundation
 
-class ContactListData {
-    
-    var contactList:Array<Contact>
-    
-    init(contactList:Array<Contact>) {
-    
-        self.contactList = contactList
-    }
+struct ContactListData {
+    let contactList:Array<Contact>
 }
