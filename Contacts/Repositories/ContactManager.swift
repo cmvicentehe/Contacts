@@ -9,7 +9,6 @@
 import Foundation
 
 protocol ContactManager {
-    
     func createAddressBook() -> Void
     func manageAutorizationStatus(completionHandler: RetrieveContactsCompletionBlock?) -> String?
     func requestAccessToContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void

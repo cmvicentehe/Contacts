@@ -9,7 +9,6 @@
 import Foundation
 
 protocol Repository {
-    
     var elements:[Contact]? { get }
     var selectedElement: Contact? { get }
     

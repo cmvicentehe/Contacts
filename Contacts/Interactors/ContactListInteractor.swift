@@ -15,5 +15,4 @@ struct ContactListInteractor: Interactor {
     init(repository:Repository) {
         self.repository = repository
     }
-    
 }

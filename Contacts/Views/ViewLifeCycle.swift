@@ -9,7 +9,6 @@
 import Foundation
 
 @objc protocol ViewLifeCycle {
-    
     @objc optional func viewWillAppeared() -> Void
     @objc optional func viewDidAppeared() -> Void
     @objc optional func viewDidLoaded() -> Void

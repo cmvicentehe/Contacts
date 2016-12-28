@@ -15,12 +15,10 @@ class CNContactManager: ContactManager {
     
     // MARK: Instance Initialization
     init() {
-        
         self.createAddressBook()
     }
     
     func createAddressBook() -> Void {
-        
         contactStore = CNContactStore()
     }
     
@@ -39,25 +37,18 @@ class CNContactManager: ContactManager {
     }
     
     func requestAccessToContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
-        
         contactStore?.requestAccess(for: CNEntityType.contacts, completionHandler: { (accessGranted, error) in
-            
             if accessGranted {
-
                 _ = self.retrieveContacts(completionHandler: completionHandler)
-                
             } else {
-                
                 print("unable to request access")
             }
         })
     }
     
      func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> [Contact] {
-        
         var contacts = [Contact]()
         do {
-            
             let contactsFetchRequest = CNContactFetchRequest(keysToFetch: [CNContactGivenNameKey as CNKeyDescriptor,
                 CNContactFamilyNameKey as CNKeyDescriptor,
                 CNContactImageDataKey as CNKeyDescriptor,
@@ -72,21 +63,18 @@ class CNContactManager: ContactManager {
             })
             
         } catch {
-            
         }
         
         return contacts
     }
     
     func convertCNContactToContact(cnContact:CNContact) -> Contact {
-        
         var name: String = ""
         var surname: String = ""
         var phoneList: [String] = [String]()
         var emailList: [String] = [String]()
         var image: Data? = nil
-        
-        
+
         if cnContact.isKeyAvailable(CNContactGivenNameKey) {
             name = cnContact.givenName
         } else {
@@ -112,7 +100,6 @@ class CNContactManager: ContactManager {
         }
         
         if cnContact.isKeyAvailable(CNContactImageDataKey) {
-            
             image = cnContact.imageData
         }
         

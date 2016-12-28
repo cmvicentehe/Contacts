@@ -15,12 +15,9 @@ class ContactListViewController: UIViewController {
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
-        
         super.viewDidLoad()
         contactListTableView?.view = self.tableView
-
         contactListTableView?.viewDidLoaded!()
     }
-
 }
 

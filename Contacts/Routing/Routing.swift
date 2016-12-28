@@ -9,6 +9,5 @@
 import UIKit
 
 protocol Routing {
-    
     func displayViewController(_ viewController:UIViewController) -> Void
 }

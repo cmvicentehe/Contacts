@@ -18,12 +18,9 @@ class ContactListRepository: Repository {
     
     func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
         
-        
-        
     }
     
     func notifyMessage(message:String) -> Void {
     
     }
-    
 }

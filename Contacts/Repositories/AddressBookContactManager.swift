@@ -16,12 +16,10 @@ class AddressBookContactManager:ContactManager {
     
     // MARK: Instance Initialization
     init() {
-        
         self.createAddressBook()
     }
     
     func createAddressBook() -> Void {
-        
         var errorRef: Unmanaged<CFError>?
         addressBook = ABAddressBookCreateWithOptions(nil, &errorRef).takeRetainedValue() as ABAddressBook
     }
@@ -41,7 +39,6 @@ class AddressBookContactManager:ContactManager {
     }
     
     func requestAccessToContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
-        
         ABAddressBookRequestAccessWithCompletion(addressBook, { (granted, error) in
             if granted {
                _ =  self.retrieveContacts(completionHandler: completionHandler)
@@ -55,21 +52,17 @@ class AddressBookContactManager:ContactManager {
     
     // MARK: Contacts management
     func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> [Contact] {
-        
         var contacts:[Contact] = [Contact]()
         let records:[ABRecord] = ABAddressBookCopyArrayOfAllPeople(addressBook).takeRetainedValue() as Array<ABRecord>
         
         for record:ABRecord in records {
-            
             let contact:Contact = convertRecordToContact(record: record)
             contacts.append(contact)
         }
-        
         return contacts
     }
     
     func convertRecordToContact(record:ABRecord) -> Contact {
-        
         var firstName:String? = ABRecordCopyValue(record,
                                           kABPersonFirstNameProperty).takeRetainedValue() as? String
         var surname:String? = ABRecordCopyValue(record,
@@ -81,12 +74,10 @@ class AddressBookContactManager:ContactManager {
         let imgData:Data = ABPersonCopyImageDataWithFormat(record, kABPersonImageFormatOriginalSize).takeRetainedValue() as Data
         
         if firstName == nil {
-            
             firstName = "NoName"
         }
         
         if surname == nil {
-            
             surname = ""
         }
         
@@ -102,5 +93,4 @@ class AddressBookContactManager:ContactManager {
         
         return contact
     }
-    
 }

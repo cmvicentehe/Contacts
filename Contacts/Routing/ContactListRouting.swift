@@ -13,15 +13,11 @@ class ContactListRouting: Routing {
     var window: UIWindow
     
     init(window:UIWindow) {
-        
         self.window = window
         window.makeKeyAndVisible()
     }
     
     func displayViewController(_ viewController:UIViewController) -> Void {
-        
         window.rootViewController = viewController
     }
-    
-    
 }

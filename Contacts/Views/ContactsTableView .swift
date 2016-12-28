@@ -22,7 +22,6 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
             self.tableView.dataSource = self
             self.tableView.delegate = self
         }
-        
     }
     
     // MARK: View protocol methods
@@ -34,35 +33,26 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     // MARK: UITableViewDataSource methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        
         return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         let cellIdentifier:String = "cell"
         var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         
         if  cell == nil {
-            
             cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
-            
         }
-        
         cell?.textLabel?.text = "cell in position \(indexPath.row)"
         
         return cell!
         
     }
     
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
     }
-    
 }

@@ -12,14 +12,12 @@ class ContactListDependencyInjetor: NSObject {
     
     // MARK: Routing
     func createContactListRouting(_ window: UIWindow) -> ContactListRouting {
-        
         let contactListRouting: ContactListRouting = ContactListRouting(window: window)
         return contactListRouting
     }
     
     // MARK: ContactListData information
     func createContactListData() -> ContactListData {
-        
         let contactList:Array<Contact> = Array<Contact>()
         let contactListData:ContactListData = ContactListData(contactList: contactList)
         return contactListData
@@ -27,7 +25,6 @@ class ContactListDependencyInjetor: NSObject {
     
     // MARK: Contact list presenter
     func createContactListPresenter(_ routing:Routing) -> ContactListPresenter {
-        
         let contactListTableView:ContactsTableView = createContactsTableView()
         var contactListInteractor:ContactListInteractor = createContactListInteractor()
         let contactListPresenter:ContactListPresenter = ContactListPresenter(view: contactListTableView, interactor: contactListInteractor, routing: routing)
@@ -40,7 +37,6 @@ class ContactListDependencyInjetor: NSObject {
     
     // MARK: Contact list interactor
     func createContactListInteractor() -> ContactListInteractor {
-    
         let repository:ContactListRepository = createContactListRepository()
         let contactListInteractor:ContactListInteractor = ContactListInteractor(repository: repository)
         return contactListInteractor
@@ -48,20 +44,17 @@ class ContactListDependencyInjetor: NSObject {
     
     // MARK: Contact list repository
     func createContactListRepository() -> ContactListRepository {
-        
         let repository:ContactListRepository = ContactListRepository()
         return repository
     }
     
     // MARK: Contact list views
     func createContactsTableView() -> ContactsTableView {
-        
         let contactsTableView:ContactsTableView = ContactsTableView()
         return contactsTableView
     }
     
     func createContactListViewController(_ view:View) -> ContactListViewController? {
-     
         let contactsStoryBoard: UIStoryboard = UIStoryboard(name: Constants.contactsStoryboard, bundle: nil)
         guard let contactListViewController: ContactListViewController = contactsStoryBoard.instantiateViewController(withIdentifier: Constants.contactListViewController) as? ContactListViewController else { return nil }
         

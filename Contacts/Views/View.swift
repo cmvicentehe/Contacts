@@ -9,7 +9,6 @@
 import UIKit
 
 protocol View: ViewLifeCycle {
-    
     var presenter: Presenter? { get set }
     var view:UIView { get set }
 }

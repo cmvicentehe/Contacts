@@ -18,7 +18,6 @@ struct ContactListPresenter: Presenter {
     
     // MARK: Instance Initialization
     init(view: View, interactor:Interactor, routing:Routing) {
-        
         self.view = view
         self.interactor = interactor
         self.routing = routing
@@ -28,5 +27,4 @@ struct ContactListPresenter: Presenter {
     func displayElements<Element>(_ elements: [Element]) -> Void {}
     func displayElementInformation<Element>(_ element:Element) -> Void {}
     func reloadInformation<Element>(_ elements: [Element]) -> Void {}
-    
 }
