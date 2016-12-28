@@ -15,4 +15,8 @@ struct ContactListInteractor: Interactor {
     init(repository:Repository) {
         self.repository = repository
     }
+    
+    func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
+        self.repository.retrieveContacts(completionHandler: completionHandler)
+    }
 }

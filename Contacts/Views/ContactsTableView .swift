@@ -27,7 +27,7 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     // MARK: View protocol methods
     
     func viewDidLoaded() {
-        presenter?.isViewLoaded = true
+        self.presenter?.viewDidLoaded()
     }
     
     // MARK: UITableViewDataSource methods
@@ -50,7 +50,6 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
         cell?.textLabel?.text = "cell in position \(indexPath.row)"
         
         return cell!
-        
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

@@ -8,7 +8,7 @@
 
 import Foundation
 
-typealias RetrieveContactsCompletionBlock = (_ result: String) -> Void
+typealias RetrieveContactsCompletionBlock = (_ contacts: [Contact]) -> Void
 
 class ContactListRepository: Repository {
     
@@ -17,10 +17,9 @@ class ContactListRepository: Repository {
     var contactManager:ContactManager?
     
     func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
-        
+        self.contactManager?.requestAccessToContacts(completionHandler: completionHandler)
     }
     
     func notifyMessage(message:String) -> Void {
-    
     }
 }

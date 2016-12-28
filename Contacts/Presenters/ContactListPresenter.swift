@@ -14,7 +14,6 @@ struct ContactListPresenter: Presenter {
     var view: View
     var interactor: Interactor
     var routing: Routing
-    var isViewLoaded:Bool?
     
     // MARK: Instance Initialization
     init(view: View, interactor:Interactor, routing:Routing) {
@@ -24,7 +23,15 @@ struct ContactListPresenter: Presenter {
     }
 
     // MARK: Presenter protocol methods
-    func displayElements<Element>(_ elements: [Element]) -> Void {}
+    func viewDidLoaded() -> Void {
+        self.interactor.retrieveContacts(completionHandler: { (contacts: [Contact]) -> Void in
+           self.displayElements(contacts)
+        })
+    }
+    
+    func displayElements<Element>(_ elements: [Element]) -> Void {
+        print(elements)
+    }
     func displayElementInformation<Element>(_ element:Element) -> Void {}
     func reloadInformation<Element>(_ elements: [Element]) -> Void {}
 }

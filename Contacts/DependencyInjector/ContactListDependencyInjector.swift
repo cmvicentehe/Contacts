@@ -45,7 +45,23 @@ class ContactListDependencyInjetor: NSObject {
     // MARK: Contact list repository
     func createContactListRepository() -> ContactListRepository {
         let repository:ContactListRepository = ContactListRepository()
+        let contactManager = self.createContactManager()
+        repository.contactManager = contactManager
+        
         return repository
+    }
+    
+    // MARK: ContactManager
+    
+    func createContactManager() -> ContactManager {
+        let contactManager: ContactManager
+        if #available(iOS 9.0, *) {
+            contactManager = CNContactManager()
+        } else {
+            contactManager = AddressBookContactManager()
+        }
+        
+        return contactManager
     }
     
     // MARK: Contact list views

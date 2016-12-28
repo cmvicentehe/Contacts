@@ -30,7 +30,6 @@ class CNContactManager: ContactManager {
         case .notDetermined: requestAccessToContacts(completionHandler: completionHandler)
         case .restricted, .denied: message = "You have to activate contact privacy permission"
         case .authorized: print("Success!")
-            
         }
         
         return message
@@ -39,7 +38,10 @@ class CNContactManager: ContactManager {
     func requestAccessToContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
         contactStore?.requestAccess(for: CNEntityType.contacts, completionHandler: { (accessGranted, error) in
             if accessGranted {
-                _ = self.retrieveContacts(completionHandler: completionHandler)
+                let contacts = self.retrieveContacts(completionHandler: completionHandler)
+                if let completionHandlerNotNil = completionHandler {
+                    completionHandlerNotNil(contacts)
+                }
             } else {
                 print("unable to request access")
             }

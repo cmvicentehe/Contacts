@@ -12,5 +12,6 @@ protocol Repository {
     var elements:[Contact]? { get }
     var selectedElement: Contact? { get }
     
+    func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void
     func notifyMessage(message:String) -> Void
 }
