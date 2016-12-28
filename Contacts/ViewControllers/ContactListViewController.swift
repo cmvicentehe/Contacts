@@ -28,7 +28,7 @@ class ContactListViewController: UIViewController {
         
         super.viewDidLoad()
     
-        let tableView:UITableView = UITableView(frame: CGRectZero)
+        let tableView:UITableView = UITableView(frame: CGRect.zero)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         
         let ownView:UIView = view
@@ -40,13 +40,13 @@ class ContactListViewController: UIViewController {
         let views:Dictionary<String, UIView> = ["ownView" : ownView,
                                                 "tableView" :tableView]
         
-        ownView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("H:|[tableView]|",
-            options: NSLayoutFormatOptions.DirectionLeadingToTrailing,
+        ownView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "H:|[tableView]|",
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: views))
         
-        ownView.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[tableView]|",
-            options: NSLayoutFormatOptions.DirectionLeadingToTrailing,
+        ownView.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[tableView]|",
+            options: NSLayoutFormatOptions(),
             metrics: nil,
             views: views))
         

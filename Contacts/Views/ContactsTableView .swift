@@ -36,24 +36,24 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     
     // MARK: UITableViewDataSource methods
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         
         return 3
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 3
     }
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier:String = "cell"
-        var cell:UITableViewCell? = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
+        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
         
         if  cell == nil {
             
-            cell = UITableViewCell(style: .Default, reuseIdentifier: cellIdentifier)
+            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
             
         }
         
@@ -64,7 +64,7 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     }
     
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
     }
     

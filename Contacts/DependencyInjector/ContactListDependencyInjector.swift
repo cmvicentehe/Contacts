@@ -11,7 +11,7 @@ import UIKit
 class ContactListDependencyInjetor: NSObject {
     
     // MARK: Routing
-    func createContactListRouting(window: UIWindow) -> ContactListRouting {
+    func createContactListRouting(_ window: UIWindow) -> ContactListRouting {
         
         let contactListRouting: ContactListRouting = ContactListRouting(window: window)
         return contactListRouting
@@ -26,7 +26,7 @@ class ContactListDependencyInjetor: NSObject {
     }
     
     // MARK: Contact list presenter
-    func createContactListPresenter(routing:Routing) -> ContactListPresenter {
+    func createContactListPresenter(_ routing:Routing) -> ContactListPresenter {
         
         let contactListTableView:ContactsTableView = createContactsTableView()
         let contactListInteractor:ContactListInteractor = createContactListInteractor()
@@ -60,7 +60,7 @@ class ContactListDependencyInjetor: NSObject {
         return contactsTableView
     }
     
-    func createContactListViewController(view:View) -> ContactListViewController {
+    func createContactListViewController(_ view:View) -> ContactListViewController {
      
         let contactListViewController: ContactListViewController = ContactListViewController(view: view)
         return contactListViewController

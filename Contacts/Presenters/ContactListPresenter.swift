@@ -25,8 +25,8 @@ class ContactListPresenter: Presenter {
     }
 
     // MARK: Presenter protocol methods
-    func displayElements<Element>(elements: [Element]) -> Void {}
-    func displayElementInformation<Element>(element:Element) -> Void {}
-    func reloadInformation<Element>(elements: [Element]) -> Void {}
+    func displayElements<Element>(_ elements: [Element]) -> Void {}
+    func displayElementInformation<Element>(_ element:Element) -> Void {}
+    func reloadInformation<Element>(_ elements: [Element]) -> Void {}
     
 }

@@ -11,7 +11,6 @@
 		096938BA1CE884D800DB78EE /* ContactsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938B91CE884D800DB78EE /* ContactsUITests.swift */; };
 		096938CE1CE8878700DB78EE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 096938C81CE8878700DB78EE /* Assets.xcassets */; };
 		096938CF1CE8878700DB78EE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 096938C91CE8878700DB78EE /* LaunchScreen.storyboard */; };
-		096938D11CE8878700DB78EE /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 096938CD1CE8878700DB78EE /* Info.plist */; };
 		096938DA1CE8882700DB78EE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938D21CE8882600DB78EE /* AppDelegate.swift */; };
 		096938DC1CE888FF00DB78EE /* ContactListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938DB1CE888FF00DB78EE /* ContactListViewController.swift */; };
 		096938DF1CE8D2E600DB78EE /* ContactListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 096938DE1CE8D2E600DB78EE /* ContactListPresenter.swift */; };
@@ -300,18 +299,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Carlos M. Vicente Herrero";
 				TargetAttributes = {
 					096938951CE884D800DB78EE = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 					};
 					096938A91CE884D800DB78EE = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 096938951CE884D800DB78EE;
 					};
 					096938B41CE884D800DB78EE = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = 096938951CE884D800DB78EE;
 					};
 				};
@@ -341,7 +343,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				096938D11CE8878700DB78EE /* Info.plist in Resources */,
 				096938CE1CE8878700DB78EE /* Assets.xcassets in Resources */,
 				096938CF1CE8878700DB78EE /* LaunchScreen.storyboard in Resources */,
 			);
@@ -444,8 +445,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -490,8 +493,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -510,6 +515,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -525,6 +531,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -537,6 +544,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.Contacts;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -548,6 +556,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.ContactsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contacts.app/Contacts";
 			};
 			name = Debug;
@@ -560,6 +569,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.ContactsTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Contacts.app/Contacts";
 			};
 			name = Release;
@@ -571,6 +581,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.ContactsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Contacts;
 			};
 			name = Debug;
@@ -582,6 +593,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = cmvicentehe.Contacts.ContactsUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = Contacts;
 			};
 			name = Release;

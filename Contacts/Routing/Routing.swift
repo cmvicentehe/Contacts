@@ -10,5 +10,5 @@ import UIKit
 
 protocol Routing {
     
-    func displayViewController(viewController:UIViewController) -> Void
+    func displayViewController(_ viewController:UIViewController) -> Void
 }

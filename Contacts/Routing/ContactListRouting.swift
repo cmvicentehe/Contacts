@@ -18,7 +18,7 @@ class ContactListRouting: Routing {
         window.makeKeyAndVisible()
     }
     
-    func displayViewController(viewController:UIViewController) -> Void {
+    func displayViewController(_ viewController:UIViewController) -> Void {
         
         window.rootViewController = viewController
     }
