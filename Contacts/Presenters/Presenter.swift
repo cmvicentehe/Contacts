@@ -15,6 +15,5 @@ protocol Presenter {
 
     func viewDidLoaded() -> Void
     func displayContacts(_ contacts: [Contact]) -> Void
-    func displayElementInformation<Element>(_ element:Element) -> Void
-    func reloadInformation<Element>(_ elements: [Element]) -> Void
+    func displayContactInformation(_ contact:Contact) -> Void
 }

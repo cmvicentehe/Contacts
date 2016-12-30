@@ -32,6 +32,5 @@ struct ContactListPresenter: Presenter {
     func displayContacts(_ contacts: [Contact]) -> Void {
         self.view.displayContacts(contacts)
     }
-    func displayElementInformation<Element>(_ element:Element) -> Void {}
-    func reloadInformation<Element>(_ elements: [Element]) -> Void {}
+    func displayContactInformation(_ contact:Contact) -> Void {}
 }

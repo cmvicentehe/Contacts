@@ -11,9 +11,8 @@ import Foundation
 typealias RetrieveContactsCompletionBlock = (_ contacts: [Contact]) -> Void
 
 class ContactListRepository: Repository {
-    
-    var elements: [Contact]?
-    var selectedElement: Contact?
+    var contacts: [Contact]?
+    var selectedContact: Contact?
     var contactManager:ContactManager?
     
     func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void {
