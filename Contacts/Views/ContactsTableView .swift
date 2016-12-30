@@ -21,6 +21,7 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
             self.tableView = newValue as? UITableView
             self.tableView.dataSource = self
             self.tableView.delegate = self
+            self.tableView.separatorStyle = .none
         }
     }
     
@@ -30,27 +31,43 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
         self.presenter?.viewDidLoaded()
     }
     
+    func displayContacts(_ contacts: [Contact]) {
+        DispatchQueue.main.async {
+            self.contactListDataInformation = ContactListData(contactList: contacts)
+            self.tableView.reloadData()
+        }
+    }
+    
     // MARK: UITableViewDataSource methods
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return 1
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return self.contactListDataInformation?.contactList.count ?? 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cellIdentifier:String = "cell"
-        var cell:UITableViewCell? = tableView.dequeueReusableCell(withIdentifier: cellIdentifier)
+        let cellIdentifier:String = Constants.contactTableViewCell
+        var cell:ContactTableViewCell? = (tableView.dequeueReusableCell(withIdentifier: cellIdentifier) as? ContactTableViewCell)
         
         if  cell == nil {
-            cell = UITableViewCell(style: .default, reuseIdentifier: cellIdentifier)
+            cell = ContactTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
-        cell?.textLabel?.text = "cell in position \(indexPath.row)"
+       
+        if let contact = self.contactListDataInformation?.contactList[indexPath.row] {
+            cell?.bindContact(contact)
+        }
         
         return cell!
     }
+    
+     // MARK: UITableViewDelegate methods
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
     }

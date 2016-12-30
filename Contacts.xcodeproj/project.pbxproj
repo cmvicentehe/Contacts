@@ -32,6 +32,7 @@
 		7DF6A6CE1CF310BE006587E5 /* AddressBookContactManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF6A6CD1CF310BE006587E5 /* AddressBookContactManager.swift */; };
 		D41E797E1E13E0270081F592 /* Contacts.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D41E797D1E13E0270081F592 /* Contacts.storyboard */; };
 		D41E79801E13E7EB0081F592 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = D41E797F1E13E7EB0081F592 /* Constants.swift */; };
+		D48C83D11E145AA60010CC4F /* ContactTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D48C83D01E145AA60010CC4F /* ContactTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		7DF6A6CD1CF310BE006587E5 /* AddressBookContactManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressBookContactManager.swift; sourceTree = "<group>"; };
 		D41E797D1E13E0270081F592 /* Contacts.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Contacts.storyboard; sourceTree = "<group>"; };
 		D41E797F1E13E7EB0081F592 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		D48C83D01E145AA60010CC4F /* ContactTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				0969AFB11CF0FA6000E7B1C2 /* ContactsTableView .swift */,
 				099C11411CE9BB2600DE8EA8 /* View.swift */,
 				099C113F1CE9BB1700DE8EA8 /* ViewLifeCycle.swift */,
+				D48C83D01E145AA60010CC4F /* ContactTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -403,6 +406,7 @@
 				099C114D1CE9EDB200DE8EA8 /* Routing.swift in Sources */,
 				099C11461CE9BD5E00DE8EA8 /* Presenter.swift in Sources */,
 				7DF6A6CA1CF2F751006587E5 /* ContactManager.swift in Sources */,
+				D48C83D11E145AA60010CC4F /* ContactTableViewCell.swift in Sources */,
 				099C11421CE9BB2600DE8EA8 /* View.swift in Sources */,
 				096938DF1CE8D2E600DB78EE /* ContactListPresenter.swift in Sources */,
 			);

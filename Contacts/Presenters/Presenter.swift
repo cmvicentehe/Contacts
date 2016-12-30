@@ -14,7 +14,7 @@ protocol Presenter {
     var routing: Routing { get }
 
     func viewDidLoaded() -> Void
-    func displayElements<Element>(_ elements: [Element]) -> Void
+    func displayContacts(_ contacts: [Contact]) -> Void
     func displayElementInformation<Element>(_ element:Element) -> Void
     func reloadInformation<Element>(_ elements: [Element]) -> Void
 }

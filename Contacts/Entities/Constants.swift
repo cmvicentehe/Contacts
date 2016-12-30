@@ -9,6 +9,7 @@
 import Foundation
 
 struct Constants {
-    static let contactsStoryboard: String     = "Contacts"
-    static let contactListViewController: String = "ContactListViewController"
+    static let contactsStoryboard: String           = "Contacts"
+    static let contactListViewController: String    = "ContactListViewController"
+    static let contactTableViewCell: String         = "ContactTableViewCell"
 }

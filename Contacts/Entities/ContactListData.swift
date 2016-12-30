@@ -9,5 +9,5 @@
 import Foundation
 
 struct ContactListData {
-    let contactList:Array<Contact>
+    let contactList:[Contact]
 }

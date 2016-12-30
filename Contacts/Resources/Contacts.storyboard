@@ -12,7 +12,7 @@
         <!--Contact List View Controller-->
         <scene sceneID="xYI-NK-dao">
             <objects>
-                <viewController storyboardIdentifier="ContactListViewController" id="o87-z0-rlz" customClass="ContactListViewController" customModule="Contacts" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactListViewController" id="o87-z0-rlz" customClass="ContactListViewController" customModule="Contacts_application" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uhf-lt-nba"/>
                         <viewControllerLayoutGuide type="bottom" id="233-7l-8tr"/>
@@ -24,6 +24,42 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="VRK-bs-idI">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="100" id="H9Y-gD-Xpj" customClass="ContactTableViewCell" customModule="Contacts_application" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="100"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="H9Y-gD-Xpj" id="PsV-wy-466">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="99.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-kS-np8">
+                                                    <rect key="frame" x="12" y="24" width="50" height="50"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="50" id="wkC-Va-zDb"/>
+                                                        <constraint firstAttribute="height" constant="50" id="xfW-WQ-LXf"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lO-Ml-uLJ">
+                                                    <rect key="frame" x="74" y="39.5" width="289" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5lO-Ml-uLJ" firstAttribute="centerY" secondItem="PsV-wy-466" secondAttribute="centerY" id="4aF-2z-dey"/>
+                                                <constraint firstItem="4hF-kS-np8" firstAttribute="leading" secondItem="PsV-wy-466" secondAttribute="leading" constant="12" id="Irh-SY-ZDM"/>
+                                                <constraint firstAttribute="trailing" secondItem="5lO-Ml-uLJ" secondAttribute="trailing" constant="12" id="RJ2-j2-aPB"/>
+                                                <constraint firstItem="4hF-kS-np8" firstAttribute="centerY" secondItem="PsV-wy-466" secondAttribute="centerY" id="WUx-d4-WYC"/>
+                                                <constraint firstItem="5lO-Ml-uLJ" firstAttribute="leading" secondItem="4hF-kS-np8" secondAttribute="trailing" constant="12" id="bl9-Za-kvT"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="contactImage" destination="4hF-kS-np8" id="8aq-bE-5G6"/>
+                                            <outlet property="nameLabel" destination="5lO-Ml-uLJ" id="BgM-Vq-40S"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -40,7 +76,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vKg-Iw-jbf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="66.11694152923539"/>
+            <point key="canvasLocation" x="59.5" y="65.5"/>
         </scene>
     </scenes>
 </document>

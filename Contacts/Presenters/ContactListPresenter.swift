@@ -25,12 +25,12 @@ struct ContactListPresenter: Presenter {
     // MARK: Presenter protocol methods
     func viewDidLoaded() -> Void {
         self.interactor.retrieveContacts(completionHandler: { (contacts: [Contact]) -> Void in
-           self.displayElements(contacts)
+           self.displayContacts(contacts)
         })
     }
     
-    func displayElements<Element>(_ elements: [Element]) -> Void {
-        print(elements)
+    func displayContacts(_ contacts: [Contact]) -> Void {
+        self.view.displayContacts(contacts)
     }
     func displayElementInformation<Element>(_ element:Element) -> Void {}
     func reloadInformation<Element>(_ elements: [Element]) -> Void {}
