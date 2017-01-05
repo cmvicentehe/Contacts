@@ -11,6 +11,8 @@ import UIKit
 class ContactTableViewCell: UITableViewCell {
     @IBOutlet weak var contactImage: UIImageView!
     @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var mailAvailableImageView: UIImageView!
+    @IBOutlet weak var phoneAvailableImageView: UIImageView!
     
     // MARK: Public methods
     func bindContact(_ contact: Contact) -> Void {
@@ -20,6 +22,21 @@ class ContactTableViewCell: UITableViewCell {
             self.contactImage.layer.cornerRadius = self.contactImage.frame.size.width / 2
         } else {
             self.contactImage.image = #imageLiteral(resourceName: "noPhoto")
+        }
+        let phoneList = contact.phoneList
+        
+        if phoneList != nil && (phoneList?.count)! > 0 {
+            self.phoneAvailableImageView.isHidden = false
+        } else {
+            self.phoneAvailableImageView.isHidden = true
+        }
+        
+        let emailList = contact.emailList
+        
+        if emailList != nil && (emailList?.count)! > 0 {
+            self.mailAvailableImageView.isHidden = false
+        } else {
+            self.mailAvailableImageView.isHidden = true
         }
     }
 }
