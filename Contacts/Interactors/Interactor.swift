@@ -11,6 +11,4 @@ import Foundation
 protocol Interactor {
     var presenter: Presenter? { get set }
     var repository: Repository { get }
-    
-    func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void
 }

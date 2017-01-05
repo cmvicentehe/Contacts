@@ -107,7 +107,6 @@ class CNContactManager: ContactManager {
         
         let contact:Contact = Contact(name: name,
                                       surname: surname,
-                                      lastSurname: nil,
                                       phoneList:phoneList,
                                       emailList:emailList,
                                       image:image)

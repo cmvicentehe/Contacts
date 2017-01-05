@@ -8,12 +8,15 @@
 
 import UIKit
 
-class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSource {
+class ContactsTableView: NSObject, ContactListView, UITableViewDelegate, UITableViewDataSource {
     
     weak var tableView:UITableView!
     var contactListDataInformation:ContactListData?
-    var presenter: Presenter?
-    var view:UIView { get {
+    var presenter: Presenter? { get {
+        return self.contactListPresenter
+        }
+    }
+    var viewElement:UIView? { get {
         return self.tableView
         }
         
@@ -25,10 +28,11 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
         }
     }
     
-    // MARK: View protocol methods
+    var contactListPresenter: ContactListPresenter?
     
+    // MARK: View protocol methods
     func viewDidLoaded() {
-        self.presenter?.viewDidLoaded()
+        self.contactListPresenter?.viewDidLoaded()
     }
     
     func displayContacts(_ contacts: [Contact]) {
@@ -39,7 +43,6 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
     }
     
     // MARK: UITableViewDataSource methods
-    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -59,7 +62,7 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
         if  cell == nil {
             cell = ContactTableViewCell(style: .default, reuseIdentifier: cellIdentifier)
         }
-       
+        
         if let contact = self.contactListDataInformation?.contactList[indexPath.row] {
             cell?.bindContact(contact)
         }
@@ -67,8 +70,11 @@ class ContactsTableView:NSObject, View, UITableViewDelegate, UITableViewDataSour
         return cell!
     }
     
-     // MARK: UITableViewDelegate methods
-    
+    // MARK: UITableViewDelegate methods
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let contact = self.contactListDataInformation?.contactList[indexPath.row] {
+            self.contactListPresenter?.userDidSelectContact(contact)
+        }
+        self.tableView.deselectRow(at: indexPath, animated: true)
     }
 }

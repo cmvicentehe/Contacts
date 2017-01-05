@@ -9,9 +9,8 @@
 import Foundation
 
 protocol Repository {
-    var contacts:[Contact]? { get }
     var selectedContact: Contact? { get }
     
     func retrieveContacts(completionHandler: RetrieveContactsCompletionBlock?) -> Void
-    func notifyMessage(message:String) -> Void
+    func selectContact(_ contact: Contact?) -> Void
 }

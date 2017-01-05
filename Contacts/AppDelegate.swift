@@ -17,14 +17,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         contactListDependencyInjector = ContactListDependencyInjetor()
         let window:UIWindow = UIWindow(frame:UIScreen.main.bounds)
         
-        guard let contactListRouting:Routing = contactListDependencyInjector?.createContactListRouting(window) else { return false }
+        guard let contactListRouting:ContactListRouting = contactListDependencyInjector?.createContactListRouting(window) else { return false }
         
         let presenter:Presenter = (contactListDependencyInjector?.createContactListPresenter(contactListRouting))!
         
         let view:View = presenter.view
         guard let contactListViewController:UIViewController = contactListDependencyInjector?.createContactListViewController(view) else { return false }
-        
-        contactListRouting.displayViewController(contactListViewController)
+        let navigationController = UINavigationController(rootViewController: contactListViewController)
+        navigationController.navigationBar.backgroundColor = UIColor.white
+        navigationController.navigationBar.isOpaque = true
+        navigationController.navigationBar.isTranslucent = false
+        contactListRouting.displayInitialViewController(navigationController)
         
         return true
     }

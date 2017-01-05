@@ -11,7 +11,6 @@ import Foundation
 typealias RetrieveContactsCompletionBlock = (_ contacts: [Contact]) -> Void
 
 class ContactListRepository: Repository {
-    var contacts: [Contact]?
     var selectedContact: Contact?
     var contactManager:ContactManager?
     
@@ -19,6 +18,7 @@ class ContactListRepository: Repository {
         self.contactManager?.requestAccessToContacts(completionHandler: completionHandler)
     }
     
-    func notifyMessage(message:String) -> Void {
+    func selectContact(_ contact: Contact?) {
+        self.selectedContact = contact
     }
 }

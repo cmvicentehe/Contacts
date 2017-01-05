@@ -9,15 +9,15 @@
 import UIKit
 
 class ContactListViewController: UIViewController {
-    
     var contactListTableView: View?
     @IBOutlet weak var tableView: UITableView!
     
     // MARK: View Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        contactListTableView?.view = self.tableView
-        contactListTableView?.viewDidLoaded!()
+        self.title = "Contact list"
+        self.contactListTableView?.viewElement = self.tableView
+        self.contactListTableView?.viewDidLoaded!()
     }
 }
 

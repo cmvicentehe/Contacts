@@ -1,3 +1,4 @@
+
 //
 //  ContactListPresenter.swift
 //  Contacts
@@ -11,26 +12,32 @@ import Foundation
 struct ContactListPresenter: Presenter {
     
     // MARK: Presenter protocol properties
-    var view: View
-    var interactor: Interactor
-    var routing: Routing
-    
-    // MARK: Instance Initialization
-    init(view: View, interactor:Interactor, routing:Routing) {
-        self.view = view
-        self.interactor = interactor
-        self.routing = routing
+    var view: View  { get {
+        return self.contactListView
+        }
     }
-
+    var routing: Routing { get {
+        return self.contactListRouting
+        }
+    }
+    var contactListView: ContactListView
+    var contactListInteractor: ContactListInteractor
+    var contactListRouting: ContactListRouting
+    
     // MARK: Presenter protocol methods
     func viewDidLoaded() -> Void {
-        self.interactor.retrieveContacts(completionHandler: { (contacts: [Contact]) -> Void in
-           self.displayContacts(contacts)
+        self.contactListInteractor.retrieveContacts(completionHandler: { (contacts: [Contact]) -> Void in
+            self.displayContacts(contacts)
         })
     }
     
     func displayContacts(_ contacts: [Contact]) -> Void {
-        self.view.displayContacts(contacts)
+        self.contactListView.displayContacts(contacts)
     }
-    func displayContactInformation(_ contact:Contact) -> Void {}
+    
+    func userDidSelectContact(_ contact: Contact) {
+        self.contactListInteractor.selectContact(contact)
+        let repository = self.contactListInteractor.repository
+        self.contactListRouting.displayDetailViewController(with: repository)
+    }
 }

@@ -9,8 +9,6 @@
 import UIKit
 
 protocol View: ViewLifeCycle {
-    var presenter: Presenter? { get set }
-    var view:UIView { get set }
-    
-    func displayContacts(_ contacts: [Contact]) -> Void
+    var presenter: Presenter? { get }
+    var viewElement: UIView? { get set }
 }

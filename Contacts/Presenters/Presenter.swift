@@ -10,10 +10,5 @@ import Foundation
 
 protocol Presenter {
     var view: View { get }
-    var interactor: Interactor { get }
     var routing: Routing { get }
-
-    func viewDidLoaded() -> Void
-    func displayContacts(_ contacts: [Contact]) -> Void
-    func displayContactInformation(_ contact:Contact) -> Void
 }

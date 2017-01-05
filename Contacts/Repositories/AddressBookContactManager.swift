@@ -86,7 +86,6 @@ class AddressBookContactManager:ContactManager {
         
         let contact:Contact = Contact(name: firstName!,
                                       surname: surname!,
-                                      lastSurname: nil,
                                       phoneList:phoneList,
                                       emailList:emailList,
                                       image:imgData)

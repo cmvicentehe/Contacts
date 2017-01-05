@@ -9,5 +9,6 @@
 import UIKit
 
 protocol Routing {
-    func displayViewController(_ viewController:UIViewController) -> Void
+    func displayInitialViewController(_ viewController: UIViewController) -> Void
+    func pushViewController(_ viewController: UIViewController) -> Void
 }
